@@ -1,0 +1,28 @@
+body {
+  background-color:black;
+  color:#eb9234;
+  font-family:arial;
+}
+
+#wrapper {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+}
+
+.time {
+  text-align:center;
+  border: 9px double #eb9234;
+  width:500px;
+  margin-bottom:20px;
+}
+
+.time input {
+  margin-bottom:20px;
+  background-color:black;
+  border:none;
+  color: #eb9234;
+  font-size:2em;
+  font-family:arial;
+}
