@@ -4,12 +4,9 @@ var germany_node = document.querySelector("#Germany input");
 var germany_time;
 var eastern_node=document.querySelector("#Eastern input");
 var eastern_time;
-var hawaii_node=document.querySelector("#Hawaii input");
-var hawaii_time;
 
 convertGerm(usaC_time);
 convertEast(usaC_time);
-convertHawaii(usaC_time);
 usaC_node.addEventListener('change', updateValue);
 
 function convertGerm(time){//convert central to germany time
@@ -20,7 +17,7 @@ if(conversion<10) //makes 1-9 a time format
   conversion=String("0"+conversion);
 germany_time = String(conversion+time.substr(2,4));
 germany_node.value = germany_time;
-  console.log(hawaii_node.value);
+  console.log(germany_node.value);
 }
 function convertEast(time){//converting usa central to eastern
   var conversion = parseInt(time)+1;
@@ -31,17 +28,7 @@ if(conversion<10) //makes 1-9 a time format
   eastern_time= String(conversion+time.substr(2,4));
   eastern_node.value=eastern_time;
 }
-function convertHawaii(time){//converting usa central to hawaii
-  var conversion = parseInt(time)-5;
-  if(conversion>=24) //make sure its within the 24 hr boundaries
-  conversion=conversion-24;
-if(conversion<10) //makes 1-9 a time format
-  conversion=String("0"+conversion);
-  hawaii_time= String(conversion+time.substr(2,4));
-  hawaii_node.value=hawaii_time;
-}
 function updateValue(e) {
 convertGerm(e.target.value);
 convertEast(e.target.value);
-convertHawaii(e.target.value);
 }
